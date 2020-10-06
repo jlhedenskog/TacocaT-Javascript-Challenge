@@ -103,6 +103,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Images\TacocaT.png" />
     <Content Include="Index.html" />
+    <Content Include="Solve.html" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
