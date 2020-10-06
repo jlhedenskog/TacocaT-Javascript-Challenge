@@ -20,90 +20,98 @@
 
 <body>
 
+    <style>
+        body {
+            background-image: url('Images/TacocaT.png');
+        }
+    </style>
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-        </div>
         <div class="container bg-light justify-content-center">
-           <div class="row">
-                   <h1>Coding Challenge: TacocaT</h1>
-
-               </div>
-
-           </div>
-
-        </div>
-    </nav>
-    <div>
-        <h5 class="mt-5 text-center">Type a word in the box to see if it is a palindrome.</h5>
-    </div>
-
-    <!-- Page Content -->
-    
-    <div class="container text-center">
-        <div class="row">
-            <div class="col">
-                <input class="mr-3" type="text" id="reverseString" />
-                <button class="btn btn-primary mr-3" id="flipBtn">Palindrome Perhaps?</button>
-                <span id="reverseOutput"></span>
-
-
+            <div class="row">
+                <h1>Coding Challenge: TacocaT</h1>
 
             </div>
 
-
-
         </div>
-
-        <!-- Bootstrap core JavaScript -->
-
-
-        <script>
-
-
-            const btn = document.getElementById('flipBtn');
-
-            //swal({
-            //    confirmButtonColor: green,
-            //});
-
-            document.getElementById("flipBtn").addEventListener("click", function () {
-                let inputWord = document.getElementById("reverseString").value;
-                let lowerInput = inputWord.toLowerCase();
-                let reverseWord = ""
-                //Franks
-                //sknarF
-                //First is the Loop Variable followed by a ;
-                //Second is the terminator
-                //Third is what happens after each loop ++ = add 1, -- = subtract 1
-                //A string is an array of characters
-                //String Word = [w][o][r][d]
-                //               0  1  2  3
-                for (let loop = inputWord.length - 1; loop >= 0; loop--) {
-                    reverseWord += inputWord.charAt(loop);
-                      /*  reverseWord += inputWord[]*/;
-                };
-                if (inputWord == reverseWord) {
-                    swal("This is a Palindrome!");
-                    
-                }
-                else {
-                    swal("This is NOT a Palindrome!");
-                };
-
-                document.getElementById("reverseOutput").innerHTML = reverseWord;
-
-            })
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="bg-light col-6 offset-3 text-center rounded py-5 mt-5">
+                <h5 class="text-center">Type a word in the box to see if it is a palindrome.</h5>
 
 
-        </script>
+                <!-- Page Content -->
+
+
+                <div class="row">
+                    <div class="col">
+                        <input class="mr-3" type="text" id="reverseString" />
+                        <button class="btn btn-primary mr-3" id="flipBtn">Palindrome Perhaps?</button>
+                        <span id="reverseOutput"></span>
 
 
 
-        <script src="//code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="//cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="Scripts/bootstrap.min.js"></script>
+                    </div>
 
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+
+    <script src="//code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+
+
+        const btn = document.getElementById('flipBtn');
+
+
+        document.getElementById("flipBtn").addEventListener("click", function () {
+            let inputWord = document.getElementById("reverseString").value;
+            let lowerInput = inputWord.toLowerCase();
+            let reverseWord = ""
+            //Franks
+            //sknarF
+            //First is the Loop Variable followed by a ;
+            //Second is the terminator
+            //Third is what happens after each loop ++ = add 1, -- = subtract 1
+            //A string is an array of characters
+            //String Word = [w][o][r][d]
+            //               0  1  2  3
+            for (let loop = inputWord.length - 1; loop >= 0; loop--) {
+                reverseWord += inputWord.charAt(loop);
+                              /*  reverseWord += inputWord[]*/;
+            };
+            if (inputWord == reverseWord) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Good Job!',
+                    text: 'This is a Palindrome!',
+                })
+            }
+            else {
+                Swal.fire("This is NOT a Palindrome!");
+            };
+
+            document.getElementById("reverseOutput").innerHTML = reverseWord;
+
+        })
+
+
+    </script>
+
+
+
+
 
 
 
