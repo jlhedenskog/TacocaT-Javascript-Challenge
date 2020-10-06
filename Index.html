@@ -99,7 +99,11 @@
                 })
             }
             else {
-                Swal.fire("This is NOT a Palindrome!");
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Try Again!',
+                    text: 'This is NOT a Palindrome!',
+                })
             };
 
             document.getElementById("reverseOutput").innerHTML = reverseWord;
