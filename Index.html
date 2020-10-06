@@ -1,0 +1,94 @@
+﻿﻿
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Coder Foundry MiniSite Template</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+
+
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+        <div class="container">
+            <a class="navbar-brand" href="/Index.html">TacocaT</a>
+        </div>
+    </nav>
+    <div>
+        <h1 class="text-center">TacocaT Challenge!</h1>
+    </div>
+
+    <!-- Page Content -->
+    
+    <div class="container text-center">
+        <div class="row">
+            <div class="col">
+                <input type="text" id="reverseString" />
+                <button class="btn btn-primary" id="flipBtn">Is This a Palindrome?</button>
+                <span id="reverseOutput"></span>
+                    
+           
+         
+        </div>
+
+
+
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+
+
+    <script>
+
+        document.getElementById("flipBtn").addEventListener("click", function () {
+            let inputWord = document.getElementById("reverseString").value;
+            let lowerInput = inputWord.toLowerCase();
+            let reverseWord = ""
+            //Franks
+            //sknarF
+            //First is the Loop Variable followed by a ;
+            //Second is the terminator
+            //Third is what happens after each loop ++ = add 1, -- = subtract 1 
+            //A string is an array of characters
+            //String Word = [w][o][r][d]
+            //               0  1  2  3
+            for (let loop = inputWord.length - 1; loop >= 0; loop--) {
+                reverseWord += inputWord.charAt(loop);
+              /*  reverseWord += inputWord[]*/;
+            };
+            if (inputWord == reverseWord) {
+                alert("This is a Palindrome!");
+            }
+            else {
+                alert("This is NOT a Palindrome!");
+            };
+
+            document.getElementById("reverseOutput").innerHTML = reverseWord;
+
+        })
+
+    </script>
+
+
+
+    <script src="//code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+
+
+
+</body>
+
+</html>
