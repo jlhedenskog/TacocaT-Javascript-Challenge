@@ -41,16 +41,58 @@
                     <li class="nav-item">
                         <a class="nav-link" target="_blank" href="https://jessicas-portfolio.netlify.app/">Portfolio</a>
                     </li>
-                    
+
                 </ul>
             </div>
         </div>
     </nav>
+
+    <button style="height: 250px;" class="btn btn-primary col-4 bigText Absolute-Center" data-toggle="modal" data-target="#explainer" id="flipBtn">GOT TACOCAT?</button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="explainer" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">What is Tacocat???</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>The Taco Cat coding challenge is based on the more traditional “Reverse a string” exercise but ultimately determines if a word or phrase is a palindrome.</p><p>The Reverse a string exercise in some form has been used by technology companies such as Amazon, Microsoft, VMware and Norton to assess a candidate’s ability to code an impromptu algorithm.</p>
+                </div>
+                <div class="modal-footer">
+                   <a href="Solve.html" class="btn btn-primary">Click to try it yourself</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <style>
+        html {
+            height: 100%;
+        }
+
         body {
             background-image: url('Images/TacocaT.png');
             background-attachment: fixed;
             overflow: hidden;
+            min-height: 100%;
+        }
+
+        .Absolute-Center {
+            margin: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+        .bigText {
+            font-size: 50px;
+            font-weight: bolder;
         }
     </style>
     <!-- Bootstrap core JavaScript -->
@@ -59,47 +101,6 @@
     <script src="//cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="Scripts/bootstrap.min.js"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-    <script>
 
-
-        const btn = document.getElementById('flipBtn');
-
-
-        document.getElementById("flipBtn").addEventListener("click", function () {
-            let inputWord = document.getElementById("reverseString").value;
-            let lowerInput = inputWord.toLowerCase();
-            let reverseWord = ""
-            //Franks
-            //sknarF
-            //First is the Loop Variable followed by a ;
-            //Second is the terminator
-            //Third is what happens after each loop ++ = add 1, -- = subtract 1
-            //A string is an array of characters
-            //String Word = [w][o][r][d]
-            //               0  1  2  3
-            for (let loop = inputWord.length - 1; loop >= 0; loop--) {
-                reverseWord += inputWord.charAt(loop);
-                                  /*  reverseWord += inputWord[]*/;
-            };
-            if (inputWord == reverseWord) {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Good Job!',
-                    text: 'This is a Palindrome!',
-                })
-            }
-            else {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Try Again!',
-                    text: 'This is NOT a Palindrome!',
-                })
-            };
-
-            document.getElementById("reverseOutput").innerHTML = reverseWord;
-
-        })
-    </script>
 </body>
 </html>

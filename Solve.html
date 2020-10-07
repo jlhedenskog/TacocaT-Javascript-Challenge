@@ -49,13 +49,17 @@
     <div class="container">
         <div class="row">
             <div class="bg-light col-6 offset-3 text-center rounded py-5 mt-5">
-                <h5 class="text-center">Type a word in the box to see if it is a palindrome.</h5>
+                <h5 class="text-center mb-3">Type a word in the box to see if it is a palindrome.</h5>
                 <!-- Page Content -->
                 <div class="row">
                     <div class="col">
-                        <input class="mr-3" type="text" id="reverseString" />
-                        <button class="btn btn-primary mr-3" id="flipBtn">Palindrome Perhaps?</button>
-                        <span id="reverseOutput"></span>
+                        <form id="form">
+                            <div class="row d-flex justify-content-center">
+                                <input class="mr-3 form-control col-5" type="text" id="reverseString" />
+                                <button class="btn btn-primary mr-3 col-5" type="submit" id="flipBtn">Palindrome Perhaps?</button>
+                            </div>
+                        </form>
+                        <div class="row text-center mt-3"><span class="col-12 bigText" id="reverseOutput"></span></div>
                     </div>
                 </div>
             </div>
@@ -66,6 +70,11 @@
             background-image: url('Images/TacocaT.png');
             background-attachment: fixed;
             overflow: hidden;
+        }
+
+        .bigText {
+            font-size: 50px;
+            font-weight: bolder;
         }
     </style>
     <!-- Bootstrap core JavaScript -->
@@ -81,7 +90,10 @@
         const btn = document.getElementById('flipBtn');
 
 
-        document.getElementById("flipBtn").addEventListener("click", function () {
+        document.getElementById("form").addEventListener("submit", TacoCheck)
+
+        function TacoCheck(e) {
+            e.preventDefault();
             let inputWord = document.getElementById("reverseString").value;
             let lowerInput = inputWord.toLowerCase();
             let reverseWord = ""
@@ -93,11 +105,11 @@
             //A string is an array of characters
             //String Word = [w][o][r][d]
             //               0  1  2  3
-            for (let loop = inputWord.length - 1; loop >= 0; loop--) {
-                reverseWord += inputWord.charAt(loop);
+            for (let loop = lowerInput.length - 1; loop >= 0; loop--) {
+                reverseWord += lowerInput.charAt(loop);
                                   /*  reverseWord += inputWord[]*/;
             };
-            if (inputWord == reverseWord) {
+            if (lowerInput == reverseWord && lowerInput) {
                 Swal.fire({
                     icon: 'success',
                     title: 'Good Job!',
@@ -114,7 +126,7 @@
 
             document.getElementById("reverseOutput").innerHTML = reverseWord;
 
-        })
+        }
     </script>
 </body>
 </html>
