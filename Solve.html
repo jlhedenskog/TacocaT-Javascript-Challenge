@@ -55,7 +55,7 @@
                     <div class="col">
                         <form id="form">
                             <div class="row d-flex justify-content-center">
-                                <input class="mr-3 form-control col-5" type="text" id="reverseString" />
+                                <input class="mr-3 form-control col-5" type="text" id="reverseString"/>
                                 <button class="btn btn-primary mr-3 col-5" type="submit" id="flipBtn">Palindrome Perhaps?</button>
                             </div>
                         </form>
@@ -91,6 +91,29 @@
 
 
         document.getElementById("form").addEventListener("submit", TacoCheck)
+
+        //document.getElementById {
+        //    var character = (evt.which) ? evt.which : evt.keyCode;
+        //    if ((character >= 97 && character <= 122) ||
+        //        (character >= 65 && character <= 90)) {
+        //        return true;
+        //    }
+        //    else {
+        //        return false;
+        //    }
+        //}
+
+        //First wire up an event listener that listens for the ONKEYPRESS event
+        document.getElementById("reverseString").addEventListener("keypress", function (evt) {
+            var character = (evt.which) ? evt.which : evt.keyCode;
+            if (character >= 97 && character <= 122 ||
+                character >= 65 && character <= 90) {
+                evt.returnValue = true;
+            }
+            else {
+                evt.returnValue = false;
+            }
+        });
 
         function TacoCheck(e) {
             e.preventDefault();
