@@ -14,6 +14,11 @@
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
 
     <style>
+
+        * {
+            font-family: 'Segoe Print';
+        }
+
         body {
             background-image: url('Images/TacocaT.png');
             background-attachment: fixed;
@@ -25,21 +30,7 @@
             font-weight: bolder;
         }
 
-        .navbar-nav {
-            font-family: 'Segoe Print';
-        }
-
-        .navbar-brand {
-            font-family: 'Segoe Print';
-        }
-
-        #flipBtn {
-            font-family: 'Segoe Print';
-        }
-
-        #palindromequestion {
-            font-family: 'Segoe Print';
-        }
+        
     </style>
 
 
@@ -159,7 +150,7 @@
             if (lowerInput == reverseWord && lowerInput) {
                 Swal.fire({
                     icon: 'success',
-                    title: 'Good Job!',
+                    title: 'You did it! 🎉',
                     text: 'This is a Palindrome!',
                 })
             }

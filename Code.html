@@ -16,6 +16,8 @@
 
     <style>
 
+
+
         .navbar-nav {
             font-family: 'Segoe Print';
         }
@@ -71,39 +73,59 @@
 <p class="lead"></p>
 <div class="container">
     <pre>
-<code class="language-js line-numbers">
-    <script>
-        const btn = document.getElementById('flipBtn');
+        <code class="language-js line-numbers">
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+            <script>
 
-        document.getElementById("form").addEventListener("submit", TacoCheck)
 
-        function TacoCheck(e) {
-            e.preventDefault();
-            let inputWord = document.getElementById("reverseString").value;
-            let lowerInput = inputWord.toLowerCase();
-            let reverseWord = ""
-            for (let loop = lowerInput.length - 1; loop >= 0; loop--) {
-                reverseWord += lowerInput.charAt(loop);
-            };
-            if (lowerInput == reverseWord && lowerInput) {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Good Job!',
-                    text: 'This is a Palindrome!',
-                })
-            }
-            else {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Try Again!',
-                    text: 'This is NOT a Palindrome!',
-                })
-            };
+                const btn = document.getElementById('flipBtn');
 
-            document.getElementById("reverseOutput").innerHTML = reverseWord;
-        }
-</script>
-</code>
+
+                document.getElementById("form").addEventListener("submit", TacoCheck)
+
+                
+                document.getElementById("reverseString").addEventListener("keypress", function (evt) {
+                    var character = (evt.which) ? evt.which : evt.keyCode;
+                    if (character >= 97 && character <= 122 ||
+                        character >= 65 && character <= 90) {
+                        evt.returnValue = true;
+                    }
+                    else {
+                        evt.returnValue = false;
+                    }
+                });
+
+
+                function TacoCheck(e) {
+                    e.preventDefault();
+                    let inputWord = document.getElementById("reverseString").value;
+                    let lowerInput = inputWord.toLowerCase();
+                    let reverseWord = ""
+                   
+                    for (let loop = lowerInput.length - 1; loop >= 0; loop--) {
+                        reverseWord += lowerInput.charAt(loop);
+                                              
+                    };
+                    if (lowerInput == reverseWord && lowerInput) {
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'You did it! 🎉',
+                            text: 'This is a Palindrome!',
+                        })
+                    }
+                    else {
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops.... ☹️',
+                            text: 'This is NOT a Palindrome!',
+                        })
+                    };
+
+                    document.getElementById("reverseOutput").innerHTML = reverseWord;
+
+                }
+            </script>
+        </code>
 </pre>
 </div> 
 
