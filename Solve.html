@@ -12,13 +12,46 @@
 
     <!-- Bootstrap core CSS -->
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+        body {
+            background-image: url('Images/TacocaT.png');
+            background-attachment: fixed;
+            overflow: hidden;
+        }
+
+        .bigText {
+            font-size: 50px;
+            font-weight: bolder;
+        }
+
+        .navbar-nav {
+            font-family: 'Segoe Print';
+        }
+
+        .navbar-brand {
+            font-family: 'Segoe Print';
+        }
+
+        #flipBtn {
+            font-family: 'Segoe Print';
+        }
+
+        #palindromequestion {
+            font-family: 'Segoe Print';
+        }
+    </style>
+
+
+
+
 </head>
 
 <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mt-0 static-top">
         <div class="container">
-            <a class="navbar-brand" href="/Index.html">TacocaT Javascript Challenge</a>
+            <a class="navbar-brand" href="/Index.html">TacocaT - A Javascript Challenge</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -39,7 +72,7 @@
                         <a class="nav-link" target="_blank" href="https://github.com/jlhedenskog/TacocaT-Javascript-Challenge">Git</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="https://jessicas-portfolio.netlify.app/">Portfolio</a>
+                        <a class="nav-link" target ="_blank" href="https://jessicas-portfolio.netlify.app/">Portfolio</a>
                     </li>
                     
                 </ul>
@@ -49,7 +82,7 @@
     <div class="container">
         <div class="row">
             <div class="bg-light col-6 offset-3 text-center rounded py-5 mt-5">
-                <h5 class="text-center mb-3">Type a word in the box to see if it is a palindrome.</h5>
+                <h5 class="text-center mb-3" id="palindromequestion">Type a word in the box to see if it is a palindrome.</h5>
                 <!-- Page Content -->
                 <div class="row">
                     <div class="col">
@@ -65,18 +98,7 @@
             </div>
         </div>
     </div>
-    <style>
-        body {
-            background-image: url('Images/TacocaT.png');
-            background-attachment: fixed;
-            overflow: hidden;
-        }
-
-        .bigText {
-            font-size: 50px;
-            font-weight: bolder;
-        }
-    </style>
+    
     <!-- Bootstrap core JavaScript -->
 
     <script src="//code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -92,6 +114,7 @@
 
         document.getElementById("form").addEventListener("submit", TacoCheck)
 
+        //document.querySelectorAll(".lettersOnly").addEventListener("keydown", function (evt) {}
         //document.getElementById {
         //    var character = (evt.which) ? evt.which : evt.keyCode;
         //    if ((character >= 97 && character <= 122) ||
@@ -114,6 +137,7 @@
                 evt.returnValue = false;
             }
         });
+        
 
         function TacoCheck(e) {
             e.preventDefault();
@@ -142,7 +166,7 @@
             else {
                 Swal.fire({
                     icon: 'error',
-                    title: 'Try Again!',
+                    title: 'Oops.... ☹️',
                     text: 'This is NOT a Palindrome!',
                 })
             };

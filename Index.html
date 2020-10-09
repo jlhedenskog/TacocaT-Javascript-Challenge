@@ -12,13 +12,54 @@
 
     <!-- Bootstrap core CSS -->
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
+
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            background-image: url('Images/TacocaT.png');
+            background-attachment: fixed;
+            overflow: hidden;
+            min-height: 100%;
+        }
+
+        .Absolute-Center {
+            margin: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+
+        .bigText {
+            font-size: 50px;
+            font-family: 'Segoe Print';
+            font-weight: bolder;
+        }
+
+        .navbar-nav {
+            font-family: 'Segoe Print';
+        }
+
+        .navbar-brand {
+            font-family: 'Segoe Print';
+        }
+
+       #tryYourself {
+           font-family: 'Segoe Print';
+       }
+    </style>
+
 </head>
 
 <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mt-0 static-top">
         <div class="container">
-            <a class="navbar-brand" href="/Index.html">TacocaT Javascript Challenge</a>
+            <a class="navbar-brand" href="/Index.html">TacocaT - A Javascript Challenge</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -47,14 +88,14 @@
         </div>
     </nav>
 
-    <button style="height: 250px;" class="btn btn-primary col-4 bigText Absolute-Center" data-toggle="modal" data-target="#explainer" id="flipBtn">GOT TACOCAT?</button>
+    <button style="height: 250px;" class="btn btn-primary col-4 bigText Absolute-Center" data-toggle="modal" data-target="#explainer" id="flipBtn">GOT TACOCAT? <p>🌮 + 🐱</p></button>
 
     <!-- Modal -->
     <div class="modal fade" id="explainer" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">What is Tacocat???</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">So..... what is TacocaT all about???</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -63,44 +104,35 @@
                     <p>The Taco Cat coding challenge is based on the more traditional “Reverse a string” exercise but ultimately determines if a word or phrase is a palindrome.</p><p>The Reverse a string exercise in some form has been used by technology companies such as Amazon, Microsoft, VMware and Norton to assess a candidate’s ability to code an impromptu algorithm.</p>
                 </div>
                 <div class="modal-footer">
-                   <a href="Solve.html" class="btn btn-primary">Click to try it yourself</a>
+                    <a href="Solve.html" class="btn btn-primary" id="tryYourself">Click to try it yourself</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <style>
-        html {
-            height: 100%;
-        }
-
-        body {
-            background-image: url('Images/TacocaT.png');
-            background-attachment: fixed;
-            overflow: hidden;
-            min-height: 100%;
-        }
-
-        .Absolute-Center {
-            margin: auto;
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-        }
-
-        .bigText {
-            font-size: 50px;
-            font-weight: bolder;
-        }
-    </style>
+  
     <!-- Bootstrap core JavaScript -->
 
     <script src="//code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="Scripts/bootstrap.min.js"></script>
+     <script>
 
+         var i = 0;
+         var txt = 'Lorem ipsum typing effect!'; /* The text */
+         var speed = 50; /* The speed/duration of the effect in milliseconds */
+
+         function typeWriter() {
+             if (i < txt.length) {
+                 document.getElementById("demo").innerHTML += txt.charAt(i);
+                 i++;
+                 setTimeout(typeWriter, speed);
+             }
+         }
+
+     </script>
+   
 
 </body>
+
 </html>
